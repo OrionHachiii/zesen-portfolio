@@ -5,6 +5,9 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { ProjectScene } from '@/components/project-scene';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+const withBasePath = (path: string) => `${basePath}${path}`;
+
 const projects = [
   { id: 'lego', number: '01', title: 'LEGO Game Console', label: 'Embedded / Education', color: 'lime' },
   { id: 'vehicle', number: '02', title: 'Wall-Climbing Vehicle', label: 'Robotics / Mechanical', color: 'orange' },
@@ -18,7 +21,7 @@ const projectDetails = {
     story: 'The project started as an Arduino Uno Club Day demo, then evolved into a lower-cost ESP32 redesign and the final project for a multi-session hardware workshop. Students moved from their first firmware upload to a complete embedded game system.',
     stats: [['2', 'hardware generations'], ['5+', 'original mini games'], ['100%', 'rebuildable enclosure']],
     tags: ['ESP32', 'Arduino', 'Embedded C++', 'OLED', 'Technical Instruction'],
-    images: ['/projects/lego/uno-console.jpg', '/projects/lego/esp32-console.jpg'],
+    images: [withBasePath('/projects/lego/uno-console.jpg'), withBasePath('/projects/lego/esp32-console.jpg')],
     repo: 'https://github.com/OrionHachiii/lego-game-console',
     accent: 'lime',
   },
@@ -29,14 +32,14 @@ const projectDetails = {
     story: 'Built through force analysis, CAD, laser cutting, 3D printing, assembly, and iterative testing. The 630 g final vehicle successfully completed a vertical climbing demonstration.',
     stats: [['630 g', 'final mass'], ['$110.20', 'documented BOM'], ['✓', 'vertical climb']],
     tags: ['CAD', 'Rapid Prototyping', 'Mechanical Design', 'Testing', 'RC Systems'],
-    images: ['/projects/vehicle/final-vehicle.jpg', '/projects/vehicle/cad-overview.jpg'],
+    images: [withBasePath('/projects/vehicle/final-vehicle.jpg'), withBasePath('/projects/vehicle/cad-overview.jpg')],
     repo: 'https://github.com/OrionHachiii/wall-climbing-vehicle',
     accent: 'orange',
   },
 };
 
 const moreProjects = [
-  { title: 'AI Trash Detector', type: 'Edge AI / Embedded', copy: 'On-device vision classification with ESP32, TensorFlow Lite, OLED feedback, and serial diagnostics.', image: '/projects/ai-trash/complete-system.jpg', href: 'https://github.com/OrionHachiii/ai-trash-detector' },
+  { title: 'AI Trash Detector', type: 'Edge AI / Embedded', copy: 'On-device vision classification with ESP32, TensorFlow Lite, OLED feedback, and serial diagnostics.', image: withBasePath('/projects/ai-trash/complete-system.jpg'), href: 'https://github.com/OrionHachiii/ai-trash-detector' },
   { title: 'BOM Finder', type: 'AI Tool / Full Stack', copy: 'Turns a hardware idea into a structured bill of materials, cost estimate, and build blueprint.', image: null, href: 'https://github.com/OrionHachiii/bom-finder' },
   { title: 'Face-Tracking Rover', type: 'Robotics / Vision', copy: 'A Raspberry Pi rover combining OpenCV face tracking, LiDAR, mecanum drive, and pan–tilt control.', image: null, href: 'https://github.com/OrionHachiii/IVC-ENGR100-FaceTrackingRover' },
 ];
@@ -113,7 +116,7 @@ export default function Home() {
         <div className="about-copy">
           <p>A transfer student at <strong>UC Irvine</strong>, studying Computer Engineering and building at the boundary between code and the physical world.</p>
           <div className="skill-strip"><span>C / C++</span><span>ESP32</span><span>Python</span><span>Edge AI</span><span>CAD</span><span>Three.js</span></div>
-          <a className="resume-link" href="/documents/zesen-long-resume.pdf" target="_blank">Download résumé <Download size={18} /></a>
+          <a className="resume-link" href={withBasePath('/documents/zesen-long-resume.pdf')} target="_blank">Download résumé <Download size={18} /></a>
         </div>
       </section>
 
