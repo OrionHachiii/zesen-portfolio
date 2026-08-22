@@ -2,6 +2,8 @@
 
 An open-source personal portfolio for a computer engineering student working across embedded systems, robotics, edge AI, and hardware–software co-design.
 
+**Live site:** [zesen-long-portfolio.vaundy.chatgpt.site](https://zesen-long-portfolio.vaundy.chatgpt.site)
+
 ## Highlights
 
 - Interactive Three.js models of a LEGO-based game console and fan-adhesion wall-climbing vehicle
