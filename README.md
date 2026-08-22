@@ -2,7 +2,7 @@
 
 An open-source personal portfolio for a computer engineering student working across embedded systems, robotics, edge AI, and hardware–software co-design.
 
-**Live site:** [zesen-long-portfolio.vaundy.chatgpt.site](https://zesen-long-portfolio.vaundy.chatgpt.site)
+**Live site:** [orionhachiii.github.io/zesen-portfolio](https://orionhachiii.github.io/zesen-portfolio/)
 
 ## Highlights
 
@@ -23,7 +23,7 @@ Create a production build with `npm run build`.
 
 ## Stack
 
-React, TypeScript, Vinext, Three.js, React Three Fiber, Drei, Framer Motion, and Tailwind CSS.
+Next.js, React, TypeScript, Three.js, React Three Fiber, Drei, Framer Motion, and Tailwind CSS. Every push to `main` is deployed automatically with GitHub Actions.
 
 ## License
 
